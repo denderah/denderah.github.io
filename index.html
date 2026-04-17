@@ -6,136 +6,192 @@
     <title>Stefano Brillante | Enterprise Agile Transformation Leader</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --accent: #34495e;
-            --text: #333;
-            --light-bg: #f8f9fa;
+            --primary: #1a365d; /* Deep Navy */
+            --secondary: #4a5568; /* Slate Gray */
+            --accent: #2b6cb0; /* Professional Blue */
+            --bg: #ffffff;
+            --light-bg: #f7fafc;
+            --text: #2d3748;
+            --text-light: #718096;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 40px 20px; color: var(--text); background-color: #fff; }
-        header { border-bottom: 3px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { margin: 0; color: var(--primary); font-size: 2.5em; text-transform: uppercase; letter-spacing: 1px; }
-        .subtitle { font-size: 1.2em; color: var(--accent); font-weight: bold; margin-top: 5px; }
-        .contact-info { margin-top: 10px; font-size: 0.9em; color: #666; }
-        
-        section { margin-bottom: 35px; }
-        h2 { border-bottom: 1px solid #eee; padding-bottom: 5px; color: var(--primary); text-transform: uppercase; font-size: 1.2em; letter-spacing: 1px; }
-        
-        .experience-item { margin-bottom: 25px; }
-        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-        .job-title { font-weight: bold; font-size: 1.1em; color: #000; }
-        .company { font-style: italic; color: var(--accent); }
-        .date { font-size: 0.9em; color: #7f8c8d; font-weight: bold; }
-        
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; background: var(--light-bg); padding: 20px; border-radius: 8px; }
-        .skill-category h3 { font-size: 1em; margin-top: 0; color: var(--accent); }
-        .skill-category ul { list-style: none; padding: 0; font-size: 0.9em; }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.7; 
+            color: var(--text); 
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
+
+        header { border-bottom: 2px solid var(--light-bg); padding-bottom: 40px; margin-bottom: 40px; }
+        h1 { margin: 0; color: var(--primary); font-size: 2.8rem; letter-spacing: -0.02em; font-weight: 800; }
+        .subtitle { font-size: 1.25rem; color: var(--secondary); font-weight: 500; margin-top: 5px; }
         
-        .certifications { font-size: 0.9em; }
+        .contact-bar { 
+            display: flex; 
+            gap: 20px; 
+            margin-top: 20px; 
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .contact-bar span { display: flex; align-items: center; }
+
+        section { margin-bottom: 50px; }
+        h2 { 
+            font-size: 1.1rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            color: var(--accent); 
+            border-bottom: 1px solid var(--light-bg);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .summary { font-size: 1.1rem; color: var(--secondary); }
+
+        /* Skills Grid */
+        .skills-container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 30px; 
+        }
+        .skill-group h3 { font-size: 1rem; margin-bottom: 15px; color: var(--primary); }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { 
+            background: var(--light-bg); 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-size: 0.85rem; 
+            color: var(--secondary);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Experience */
+        .exp-item { margin-bottom: 40px; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+        .exp-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+        .exp-company { color: var(--accent); font-weight: 600; font-size: 1rem; }
+        .exp-date { font-size: 0.9rem; color: var(--text-light); font-weight: 600; }
         
-        @media print {
-            body { padding: 0; margin: 0; }
-            .skills-grid { background: none; padding: 0; }
+        ul { padding-left: 18px; margin-top: 10px; }
+        li { margin-bottom: 10px; position: relative; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .exp-header { flex-direction: column; }
+            .exp-date { margin-top: 5px; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Stefano Brillante</h1> [cite: 1]
-    <div class="subtitle">Enterprise Agile Transformation Leader</div> [cite: 1]
-    <div class="contact-info">
-        Barcelona, Spain [cite: 2] | stefano.brillante@gmail.com [cite: 2] | linkedin.com/in/stefanobrillante [cite: 2]
-    </div>
-</header>
+<div class="container">
+    <header>
+        <h1>Stefano Brillante</h1>
+        <div class="subtitle">Enterprise Agile Transformation Leader</div>
+        <div class="contact-bar">
+            <span>📍 Barcelona, Spain</span>
+            <span>✉️ stefano.brillante@gmail.com</span>
+            <span>🔗 linkedin.com/in/stefanobrillante</span>
+        </div>
+    </header>
 
-<section>
-    <h2>Professional Summary</h2>
-    <p>Highly accomplished Enterprise Agile Transformation Leader with 8+ years of expertise in driving organizational growth and strategic change[cite: 3]. Proven ability to design and govern complex scaling frameworks (SAFe, LeSS, Spotify Model) and data-driven practices, including custom PowerBI dashboards to validate transformation ROI[cite: 4]. Notable expertise in leading Generative AI/LLM integration into the SDLC to improve velocity and quality[cite: 6].</p>
-</section>
+    <section>
+        <h2>Professional Summary</h2>
+        <p class="summary">
+            Highly accomplished Enterprise Agile Transformation Leader with 8+ years of expertise in driving organizational growth and strategic change. Proven ability to design and govern complex scaling frameworks (SAFe, LeSS, Spotify Model) and data-driven practices. Notable expertise in leading Generative AI/LLM integration into the SDLC to improve velocity and quality.
+        </p>
+    </section>
 
-<section>
-    <h2>Core Skills</h2>
-    <div class="skills-grid">
-        <div class="skill-category">
-            <h3>Agile & Scaling</h3> [cite: 18]
+    <section>
+        <h2>Core Expertise</h2>
+        <div class="skills-container">
+            <div class="skill-group">
+                <h3>Agile & Scaling</h3>
+                <div class="skill-tags">
+                    <span class="tag">SAFe</span> <span class="tag">LeSS</span> <span class="tag">Spotify Model</span>
+                    <span class="tag">PI Planning</span> <span class="tag">Value Stream Mapping</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Technology & AI</h3>
+                <div class="skill-tags">
+                    <span class="tag">Generative AI / LLMs</span> <span class="tag">AI-Augmented SDLC</span>
+                    <span class="tag">Jira</span> <span class="tag">Azure DevOps</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Data & Analytics</h3>
+                <div class="skill-tags">
+                    <span class="tag">Power BI</span> <span class="tag">Flow Metrics</span>
+                    <span class="tag">Cycle Time</span> <span class="tag">ROI Validation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        
+        <div class="exp-item">
+            <div class="exp-header">
+                <div>
+                    <div class="exp-title">Agile Coach</div>
+                    <div class="exp-company">Byrom PLC</div>
+                </div>
+                <div class="exp-date">Feb 2025 – Present</div>
+            </div>
             <ul>
-                <li>SAFe, LeSS, Spotify Model [cite: 22, 25, 28]</li>
-                <li>PI Planning & RTE [cite: 23, 24]</li>
-                <li>Value Stream Mapping [cite: 29]</li>
+                <li>Implemented custom PowerBI dashboards for key flow metrics, resulting in a 20% improvement in bottleneck identification.</li>
+                <li>Led Generative AI integration into SDLC, reducing rejection rates by 30% through AI-augmented PR reviews.</li>
+                <li>Accelerated e-commerce time-to-market by 15% through focused team coaching.</li>
             </ul>
         </div>
-        <div class="skill-category">
-            <h3>Technology & SDLC</h3> [cite: 30]
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div>
+                    <div class="exp-title">Agile Coach</div>
+                    <div class="exp-company">Zurich Insurance Group</div>
+                </div>
+                <div class="exp-date">Jan 2024 – Feb 2025</div>
+            </div>
             <ul>
-                <li>Generative AI & LLMs [cite: 34, 36]</li>
-                <li>AI-Augmented SDLC [cite: 31]</li>
-                <li>Jira & Azure DevOps [cite: 32, 35]</li>
+                <li>Spearheaded transformation across Investment Admin impacting 100+ employees.</li>
+                <li>Streamlined financial closing processes, achieving a 40% increase in employee satisfaction.</li>
+                <li>Drove a 20% improvement in team velocity using a proprietary Agile Maturity Model.</li>
             </ul>
         </div>
-        <div class="skill-category">
-            <h3>Data & Metrics</h3> [cite: 39]
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div>
+                    <div class="exp-title">Agile Practice Manager</div>
+                    <div class="exp-company">OutSystems</div>
+                </div>
+                <div class="exp-date">Feb 2021 – May 2024</div>
+            </div>
             <ul>
-                <li>Power BI Dashboards [cite: 45]</li>
-                <li>Flow Metrics (Cycle Time) [cite: 42]</li>
-                <li>Transformation ROI [cite: 40]</li>
+                <li>Managed and mentored a team of 10 Senior Agile Coaches.</li>
+                <li>Directed the development of a Generative AI low-code IDE, reaching beta ahead of schedule.</li>
+                <li>Standardized engineering career progression frameworks in collaboration with HR.</li>
             </ul>
         </div>
-    </div>
-</section>
+    </section>
 
-<section>
-    <h2>Experience</h2>
-    
-    <div class="experience-item">
-        <div class="job-header">
-            <span class="job-title">Agile Coach</span> [cite: 10]
-            <span class="date">02/2025 – Present</span> [cite: 9]
+    <section>
+        <h2>Certifications</h2>
+        <div class="skill-tags">
+            <span class="tag">Advanced Certified Scrum Master (2023)</span>
+            <span class="tag">Certified Scrum Master (2019)</span>
         </div>
-        <div class="company">Byrom PLC</div> [cite: 8]
-        <ul>
-            <li>Implemented custom PowerBI dashboards for key flow metrics, resulting in a 20% improvement in bottleneck identification[cite: 11].</li>
-            <li>Led Generative AI integration into SDLC, reducing rejection rates by 30% through AI-augmented PR reviews[cite: 12].</li>
-            <li>Accelerated e-commerce time-to-market by 15% through focused team coaching[cite: 13].</li>
-        </ul>
-    </div>
-
-    <div class="experience-item">
-        <div class="job-header">
-            <span class="job-title">Agile Coach</span> [cite: 51]
-            <span class="date">01/2024 – 02/2025</span> [cite: 50]
-        </div>
-        <div class="company">Zurich Insurance Group</div> [cite: 49]
-        <ul>
-            <li>Spearheaded transformation across Investment Admin impacting 100+ employees[cite: 52].</li>
-            <li>Streamlined financial closing processes, achieving a 40% increase in employee satisfaction[cite: 54].</li>
-            <li>Drove a 20% improvement in team velocity using a proprietary Agile Maturity Model[cite: 56].</li>
-        </ul>
-    </div>
-
-    <div class="experience-item">
-        <div class="job-header">
-            <span class="job-title">Agile Practice Manager / Product Operations</span> [cite: 59]
-            <span class="date">02/2021 – 05/2024</span> [cite: 58]
-        </div>
-        <div class="company">OutSystems</div> [cite: 57]
-        <ul>
-            <li>Managed and mentored a team of 10 Senior Agile Coaches[cite: 61].</li>
-            <li>Directed the development of a Generative AI low-code IDE, reaching beta ahead of schedule[cite: 62].</li>
-            <li>Standardized engineering career progression frameworks in collaboration with HR[cite: 48].</li>
-        </ul>
-    </div>
-</section>
-
-<section>
-    <h2>Certifications</h2>
-    <ul class="certifications">
-        <li><strong>Advanced Certified Scrum Master</strong> - Scrum Alliance (2023) [cite: 101, 103, 104]</li>
-        <li><strong>Certified Scrum Master</strong> - Scrum Alliance (2019) [cite: 105, 106]</li>
-    </ul>
-</section>
+    </section>
+</div>
 
 </body>
 </html>
