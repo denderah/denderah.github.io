@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0f172a; /* Slate 900 */
-            --accent: #3b82f6; /* Modern Blue */
+            --primary: #0f172a; 
+            --accent: #3b82f6; 
             --accent-soft: rgba(59, 130, 246, 0.1);
             --text-main: #1e293b;
             --text-muted: #64748b;
@@ -27,7 +27,6 @@
             scroll-behavior: smooth;
         }
 
-        /* --- Animations --- */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -35,10 +34,8 @@
 
         .reveal { animation: fadeInUp 0.8s ease forwards; }
 
-        /* --- Layout --- */
         .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
 
-        /* --- Header / Navigation --- */
         header { 
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
@@ -50,14 +47,12 @@
             padding: 1.5rem 0;
         }
 
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); letter-spacing: -0.5px; }
+        .nav-content { display: flex; justify-content: flex-end; align-items: center; }
 
-        /* --- Hero Section --- */
         .hero { padding: 5rem 0 3rem 0; text-align: left; }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: var(--primary); line-height: 1.1; margin-bottom: 1rem; }
         .hero .subtitle { font-size: 1.5rem; color: var(--accent); font-weight: 600; margin-bottom: 1.5rem; }
-        .hero .summary { max-width: 800px; font-size: 1.1rem; color: var(--text-muted); }
+        .hero .summary { max-width: 850px; font-size: 1.1rem; color: var(--text-muted); }
 
         .contact-grid { display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
         .contact-item { 
@@ -81,26 +76,22 @@
         }
         .btn-main:hover { transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); background: var(--accent); }
 
-        /* --- Content Sections --- */
         section { padding: 4rem 0; }
         h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 2rem; }
 
-        /* --- Skills --- */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
         .skill-card { 
             background: var(--card-bg); padding: 1.5rem; border-radius: 16px; 
             border: 1px solid rgba(0,0,0,0.03); transition: var(--transition); 
         }
         .skill-card:hover { border-color: var(--accent-soft); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .skill-card h3 { font-size: 1rem; margin-bottom: 1rem; color: var(--primary); }
+        .skill-card h3 { font-size: 1rem; margin-bottom: 1rem; color: var(--primary); border-bottom: 1px solid var(--bg-body); padding-bottom: 8px; }
         .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .tag { 
             font-size: 0.75rem; background: var(--bg-body); color: var(--text-muted); 
             padding: 4px 10px; border-radius: 6px; font-weight: 600; 
         }
 
-        /* --- Work Experience --- */
-        .timeline { position: relative; }
         .exp-card { 
             background: var(--card-bg); 
             padding: 2.5rem; 
@@ -108,9 +99,8 @@
             margin-bottom: 2rem; 
             border: 1px solid rgba(0,0,0,0.03);
             transition: var(--transition);
-            position: relative;
         }
-        .exp-card:hover { transform: scale(1.01); box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
+        .exp-card:hover { transform: scale(1.005); box-shadow: 0 20px 40px rgba(0,0,0,0.04); }
         
         .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
         .company-name { font-size: 1.4rem; font-weight: 800; color: var(--primary); }
@@ -118,18 +108,19 @@
         .exp-date { background: var(--accent-soft); color: var(--accent); padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; }
 
         .exp-content ul { list-style: none; }
-        .exp-content li { margin-bottom: 1rem; position: relative; padding-left: 1.5rem; color: var(--text-main); font-size: 0.95rem; }
+        .exp-content li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; color: var(--text-main); font-size: 0.95rem; }
         .exp-content li::before { 
-            content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 900; 
+            content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: 900; 
         }
 
-        /* --- Footer --- */
-        footer { padding: 4rem 0; text-align: center; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+        .sub-role { margin-top: 1.5rem; border-top: 1px dashed var(--accent-soft); padding-top: 1.5rem; }
+
+        footer { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .exp-card { padding: 1.5rem; }
-            .nav-content { flex-direction: column; gap: 1rem; }
+            .nav-content { justify-content: center; }
         }
     </style>
 </head>
@@ -137,10 +128,10 @@
 
 <header>
     <div class="container nav-content">
-        <div class="nav-logo">SB.DIGITAL</div>
         <div class="contact-grid" style="margin-top: 0;">
-            <a href="mailto:stefano.brillante@gmail.com" class="contact-item">Email</a>
-            <a href="https://linkedin.com/in/stefanobrillante" target="_blank" class="contact-item">LinkedIn</a>
+            <a href="mailto:stefano.brillante@gmail.com" class="contact-item">✉️ Email</a>
+            <a href="https://linkedin.com/in/stefanobrillante" target="_blank" class="contact-item">🔗 LinkedIn</a>
+            <span class="contact-item">📍 Barcelona, Spain</span>
         </div>
     </div>
 </header>
@@ -150,49 +141,53 @@
         <h1>Stefano Brillante</h1>
         <div class="subtitle">Enterprise Agile Transformation Leader</div>
         <p class="summary">
-            Driving organizational growth through complex scaling frameworks (SAFe, LeSS, Spotify) and data-driven ROI validation. Leading the frontier of **Generative AI/LLM integration** into the SDLC to revolutionize engineering velocity.
+            Highly accomplished Enterprise Agile Transformation Leader with 8+ years of expertise in driving organizational growth and strategic change across global financial and technology sectors. Proven ability to design, implement, and govern complex scaling frameworks (SAFe, LeSS, Spotify Model) and data-driven practices. Notable expertise in leading Generative AI/LLM integration into the SDLC to improve velocity and quality.
         </p>
         <a href="Stefano%20Brillante%20-%20Agile%20Coach.pdf" download="Stefano_Brillante_Resume.pdf" class="btn-main">
-            Download Full Case Study (PDF)
+            Download Resume (PDF)
         </a>
     </section>
 
     <section id="skills" class="reveal">
-        <h2>Core Expertise</h2>
+        <h2>Expertise & Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <h3>Agile & Scaling</h3>
                 <div class="skill-tags">
-                    <span class="tag">SAFe</span> <span class="tag">LeSS</span> <span class="tag">Spotify Model</span>
-                    <span class="tag">RTE</span> <span class="tag">VSM</span> <span class="tag">Kanban</span>
+                    <span class="tag">Agile Maturity Models</span> <span class="tag">SAFe</span> <span class="tag">LeSS</span> 
+                    <span class="tag">Spotify Model</span> <span class="tag">PI Planning</span> <span class="tag">RTE</span> 
+                    <span class="tag">VSM</span> <span class="tag">Kanban</span> <span class="tag">Scrum</span>
                 </div>
             </div>
             <div class="skill-card">
-                <h3>AI & SDLC</h3>
+                <h3>Technology & SDLC</h3>
                 <div class="skill-tags">
-                    <span class="tag">Generative AI</span> <span class="tag">LLMs</span> 
-                    <span class="tag">AI-Augmented SDLC</span> <span class="tag">Jira Automations</span>
+                    <span class="tag">Generative AI</span> <span class="tag">LLMs</span> <span class="tag">AI-Augmented SDLC</span> 
+                    <span class="tag">Azure DevOps</span> <span class="tag">Jira Custom Workflows</span> 
+                    <span class="tag">Low-Code IDEs</span> <span class="tag">Confluence</span>
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Data Intelligence</h3>
+                <h3>Data & Metrics</h3>
                 <div class="skill-tags">
-                    <span class="tag">Power BI</span> <span class="tag">Flow Metrics</span>
-                    <span class="tag">Cycle Time</span> <span class="tag">Transformation ROI</span>
+                    <span class="tag">Power BI Dashboards</span> <span class="tag">Flow Metrics</span> 
+                    <span class="tag">Cycle Time</span> <span class="tag">Throughput</span> <span class="tag">OKRs</span> 
+                    <span class="tag">KPIs</span> <span class="tag">Transformation ROI</span>
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Leadership</h3>
+                <h3>Organizational</h3>
                 <div class="skill-tags">
-                    <span class="tag">Executive Alignment</span> <span class="tag">CoP</span>
-                    <span class="tag">Change Management</span> <span class="tag">Mentorship</span>
+                    <span class="tag">Executive Alignment</span> <span class="tag">CoP</span> 
+                    <span class="tag">Change Management</span> <span class="tag">Stakeholder Management</span> 
+                    <span class="tag">Team Mentorship</span> <span class="tag">Curriculum Design</span>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="experience" class="reveal">
-        <h2>Professional Journey</h2>
+        <h2>Work Experience</h2>
 
         <div class="exp-card">
             <div class="exp-header">
@@ -200,13 +195,15 @@
                     <div class="company-name">Byrom PLC</div>
                     <div class="role-title">Agile Coach</div>
                 </div>
-                <div class="exp-date">2025 – PRESENT</div>
+                <div class="exp-date">02/2025 – PRESENT</div>
             </div>
             <div class="exp-content">
                 <ul>
-                    <li>Implemented custom **PowerBI dashboards** for flow metrics, resulting in a 20% improvement in bottleneck identification.</li>
-                    <li>Integrated **Generative AI into SDLC**, reducing rejection rates by 30% through AI-augmented PR reviews.</li>
-                    <li>Accelerated time-to-market by 15% via focused team coaching and productization of new applications.</li>
+                    <li>Drove data-driven decision-making by implementing a custom PowerBI dashboard focused on key flow metrics (e.g., Cycle Time, Throughput, Flow Efficiency), resulting in a 20% improvement in bottleneck identification and a clearer delivery pipeline view for leadership.</li>
+                    <li>Led the integration of Generative AI into the SDLC process, connecting the AI to code and documentation to augment requirement generation, implement AI-augmented Pull Request reviews, and ensure real-time documentation updates, significantly improving development velocity and quality, reducing rejection rate by 30%.</li>
+                    <li>Accelerated value delivery for the e-commerce team, reducing time-to-market by 15%, through focused team coaching and collaborative roadmapping exercises.</li>
+                    <li>Cultivated a strategic Agile mindset across the organization by designing and delivering comprehensive Agile/Scrum training to the 35+ engineer Engineering Group, and securing executive sponsorship to extend the training to the Board of Directors.</li>
+                    <li>Guided the Accommodation team through the initial productization and delivery of a new application, successfully establishing a validated roadmap and Minimum Viable Product (MVP) criteria for launch success.</li>
                 </ul>
             </div>
         </div>
@@ -217,13 +214,14 @@
                     <div class="company-name">Zurich Insurance Group</div>
                     <div class="role-title">Agile Coach</div>
                 </div>
-                <div class="exp-date">2024 – 2025</div>
+                <div class="exp-date">01/2024 – 02/2025</div>
             </div>
             <div class="exp-content">
                 <ul>
-                    <li>Spearheaded transformation for 100+ employees in Investment Administration.</li>
-                    <li>Achieved a **40% increase in employee satisfaction** by streamlining complex financial closing processes.</li>
-                    <li>Drove 20% improvement in velocity using a proprietary Agile Maturity Model.</li>
+                    <li>Spearheaded the Agile transformation across the Investment Administration & Accounting Operations, directly impacting 10+ teams and 100+ employees by designing and executing a tailored rollout strategy.</li>
+                    <li>Streamlined the most critical financial processes (monthly, quarterly, and year-end closings) by implementing new collaborative processes that increased transparency and reduced cross-team dependencies. This effort was validated by before-and-after surveys showing a 40% increase in employee satisfaction with the closing process.</li>
+                    <li>Elevated organizational capability and fostered continuous improvement by establishing and mentoring high-impact Communities of Practice (CoP) for Product Owners and Scrum Masters, up-skilling 15+ individuals across the division.</li>
+                    <li>Implemented a data-driven transformation framework, using a proprietary Agile Maturity Model and PowerBI dashboards to validate transformation ROI for leadership, ensuring efforts aligned with strategic business outcomes and drove a 20% improvement in team velocity.</li>
                 </ul>
             </div>
         </div>
@@ -232,17 +230,29 @@
             <div class="exp-header">
                 <div>
                     <div class="company-name">OutSystems</div>
-                    <div class="role-title">Agile Practice Manager</div>
+                    <div class="role-title">Agile Practice Manager / Product Operations</div>
                 </div>
-                <div class="exp-date">2021 – 2024</div>
+                <div class="exp-date">02/2021 – 05/2024</div>
             </div>
             <div class="exp-content">
-                <p style="margin-bottom: 1rem; font-weight: 700; color: var(--primary);">Awarded "Top Employee" | Managed team of 10 Senior Coaches</p>
+                <p style="margin-bottom: 1rem; font-weight: 700; color: var(--primary);">Recognized as "Top Employee" | Highest Officevibe Manager Scores</p>
                 <ul>
-                    <li>Directed development of a **Generative AI low-code IDE**, reaching beta milestones ahead of schedule.</li>
-                    <li>Optimized R&D Release Trains via Value Stream Mapping and custom SAFe adoption.</li>
-                    <li>Scaled Jira usage to 100% across R&D through a major refactoring initiative.</li>
+                    <li>Managed and mentored the Senior Agile Coaches Team of 10 people, driving consistency and excellence in coaching standards across the organization.</li>
+                    <li>Directed the Morpheus Team through the product development lifecycle of a Generative AI low-code IDE, successfully achieving the first closed beta milestone ahead of schedule.</li>
+                    <li>Drove organizational flow and continuous improvement through Value Stream Mapping efforts, leading to the design and optimization of the Release Train for a major product line.</li>
                 </ul>
+
+                <div class="sub-role">
+                    <div class="role-title" style="margin-bottom: 1rem;">Senior Agile Coach / Product Owner</div>
+                    <ul>
+                        <li>Led the implementation and tailored adoption of SAFe across R&D, applying a custom maturity model and engaging stakeholders to design bespoke solutions for organizational scaling.</li>
+                        <li>Drove a major Jira refactoring initiative, increasing R&D usage to 100% and developing custom workflows to serve the diverse needs of multiple Agile Release Trains (ARTs).</li>
+                        <li>Developed and implemented the Agile Maturity Model (Team Growth Process), successfully coaching and growing teams from basic to advanced maturity levels.</li>
+                        <li>Acted as a Release Train Engineer (RTE), facilitating PI Plannings and ensuring strategic alignment between the Agile Release Train and Value Stream Leaders from roadmap definition through execution.</li>
+                        <li>Served as Product Owner for the Compilers & Backend Teams (the core system product), defining vision, managing the backlog, and prioritizing work to drive system stability and new feature delivery.</li>
+                        <li>Implemented and leveraged PowerBI dashboards to track Agile Maturity, Goals, and Execution, reporting to CTO, VPs, and senior stakeholders to secure tactical improvement initiatives and align on long-term strategy.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -252,12 +262,16 @@
                     <div class="company-name">Wefox</div>
                     <div class="role-title">Scrum Master</div>
                 </div>
-                <div class="exp-date">2019 – 2021</div>
+                <div class="exp-date">09/2019 – 01/2021</div>
             </div>
             <div class="exp-content">
                 <ul>
-                    <li>Scaled LeSS adoption for multi-team coordination and knowledge sharing.</li>
-                    <li>Delivered bespoke Agile training to 50+ employees, fostering a self-sustaining learning culture.</li>
+                    <li>Initiated and scaled Communities of Practice (CoPs) across Engineering, Product, and Agile, successfully fostering cross-functional knowledge sharing and driving organizational excellence.</li>
+                    <li>Successfully implemented and coached the adoption of Scaled Agile (LeSS), enabling multiple teams to coordinate work streams and deliver integrated value at scale.</li>
+                    <li>Provided strategic transparency to the CTO through direct reporting on the progress and measurable impact of the Agile Transformation initiative.</li>
+                    <li>Designed and delivered a bespoke Agile training curriculum to 50+ employees, accelerating foundational competency and fostering a self-sustaining learning culture.</li>
+                    <li>Created and standardized the hiring process for the Agile Team, securing top-tier talent and ensuring the long-term quality and consistency of the coaching function.</li>
+                    <li>Enhanced organizational learning by designing and leading culture-building programs including Brown-Bag sessions and Book Clubs, directly contributing to a knowledge-sharing environment.</li>
                 </ul>
             </div>
         </div>
@@ -268,12 +282,17 @@
                     <div class="company-name">Stuart</div>
                     <div class="role-title">Scrum Master / Agile Coach</div>
                 </div>
-                <div class="exp-date">2017 – 2019</div>
+                <div class="exp-date">06/2017 – 08/2019</div>
             </div>
             <div class="exp-content">
                 <ul>
-                    <li>Scaled Scrum across 5 teams using the **Spotify Model** organizational structure.</li>
-                    <li>Co-developed the "Mission Minded" framework to align cross-functional teams.</li>
+                    <li>Successfully scaled Scrum across 5 teams using a "Spotify Model" organizational structure, enhancing cross-team collaboration and delivery cadence.</li>
+                    <li>Institutionalized regular team “Health Checks” to provide data-driven insights into team morale, process maturity, and bottlenecks, leading to significant improvement in identified areas.</li>
+                    <li>Designed and implemented an internal “Agile Fluency” model (inspired by the Scrum Checklist) to standardize and track team growth, providing clear benchmarks for continuous improvement.</li>
+                    <li>Empowered teams to track and own their performance by implementing a wide set of key flow and value metrics, driving a focus on outcomes over output.</li>
+                    <li>Co-developed a custom product development framework, “Mission Minded,” to align cross-functional teams and streamline the end-to-end value creation process.</li>
+                    <li>Led office-wide retrospectives involving 60+ employees to collectively identify and implement initiatives for the betterment of the overall working environment and culture.</li>
+                    <li>Partnered closely with Product teams to define and manage product roadmaps, focusing on Epic/Story writing, splitting, and refinement to ensure a high-quality, ready-for-development backlog.</li>
                 </ul>
             </div>
         </div>
@@ -281,7 +300,7 @@
     </section>
 
     <footer>
-        <p>© 2025 Stefano Brillante — Built with GitHub Pages</p>
+        <p>© 2025 Stefano Brillante | Built with GitHub Pages</p>
     </footer>
 </div>
 
