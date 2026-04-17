@@ -6,9 +6,9 @@
     <title>Stefano Brillante | Enterprise Agile Transformation Leader</title>
     <style>
         :root {
-            --primary: #1a365d; /* Deep Navy */
-            --secondary: #4a5568; /* Slate Gray */
-            --accent: #2b6cb0; /* Professional Blue */
+            --primary: #1a365d; 
+            --secondary: #4a5568; 
+            --accent: #2b6cb0; 
             --bg: #ffffff;
             --light-bg: #f7fafc;
             --text: #2d3748;
@@ -37,9 +37,35 @@
             margin-top: 20px; 
             flex-wrap: wrap;
             font-size: 0.9rem;
-            color: var(--text-light);
         }
-        .contact-bar span { display: flex; align-items: center; }
+        .contact-bar a { 
+            color: var(--text-light); 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            transition: color 0.2s;
+        }
+        .contact-bar a:hover { color: var(--accent); }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
 
         section { margin-bottom: 50px; }
         h2 { 
@@ -54,7 +80,6 @@
 
         .summary { font-size: 1.1rem; color: var(--secondary); }
 
-        /* Skills Grid */
         .skills-container { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -71,7 +96,6 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* Experience */
         .exp-item { margin-bottom: 40px; }
         .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
         .exp-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
@@ -79,7 +103,7 @@
         .exp-date { font-size: 0.9rem; color: var(--text-light); font-weight: 600; }
         
         ul { padding-left: 18px; margin-top: 10px; }
-        li { margin-bottom: 10px; position: relative; }
+        li { margin-bottom: 10px; }
 
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
@@ -96,9 +120,13 @@
         <div class="subtitle">Enterprise Agile Transformation Leader</div>
         <div class="contact-bar">
             <span>📍 Barcelona, Spain</span>
-            <span>✉️ stefano.brillante@gmail.com</span>
-            <span>🔗 linkedin.com/in/stefanobrillante</span>
+            <a href="mailto:stefano.brillante@gmail.com">✉️ stefano.brillante@gmail.com</a>
+            <a href="https://linkedin.com/in/stefanobrillante" target="_blank">🔗 linkedin.com/in/stefanobrillante</a>
         </div>
+        
+        <a href="Stefano%20Brillante%20-%20Agile%20Coach.pdf" download="Stefano_Brillante_Resume.pdf" class="download-btn">
+            📥 Download PDF Resume
+        </a>
     </header>
 
     <section>
@@ -154,44 +182,3 @@
         </div>
 
         <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <div class="exp-title">Agile Coach</div>
-                    <div class="exp-company">Zurich Insurance Group</div>
-                </div>
-                <div class="exp-date">Jan 2024 – Feb 2025</div>
-            </div>
-            <ul>
-                <li>Spearheaded transformation across Investment Admin impacting 100+ employees.</li>
-                <li>Streamlined financial closing processes, achieving a 40% increase in employee satisfaction.</li>
-                <li>Drove a 20% improvement in team velocity using a proprietary Agile Maturity Model.</li>
-            </ul>
-        </div>
-
-        <div class="exp-item">
-            <div class="exp-header">
-                <div>
-                    <div class="exp-title">Agile Practice Manager</div>
-                    <div class="exp-company">OutSystems</div>
-                </div>
-                <div class="exp-date">Feb 2021 – May 2024</div>
-            </div>
-            <ul>
-                <li>Managed and mentored a team of 10 Senior Agile Coaches.</li>
-                <li>Directed the development of a Generative AI low-code IDE, reaching beta ahead of schedule.</li>
-                <li>Standardized engineering career progression frameworks in collaboration with HR.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Certifications</h2>
-        <div class="skill-tags">
-            <span class="tag">Advanced Certified Scrum Master (2023)</span>
-            <span class="tag">Certified Scrum Master (2019)</span>
-        </div>
-    </section>
-</div>
-
-</body>
-</html>
